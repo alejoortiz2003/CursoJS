@@ -1,31 +1,28 @@
-// var let const
+var a = 'a';
+let b = 'b';
+const c = 'c';
 
-//let nombre = 'David';
+// Scope de la funcion
+function funcionScope() {
+    var a = 'A';
+    let b = 'B';
+    const c = 'C';
+    console.log('FUNCION: '+a,b,c);
+}
+funcionScope();
+// Scope de bloque{}
+if(true) {
+    var a = 'AA';
+    let b = 'BB';
+    const c = 'CC';
+    console.log('BLOQUE: '+a,b,c);
+}
 
-//const producto = 'libro';
-
-
-// concatenar JavaScript
-
-producto = 'JAVA'+'SCRIPT';
-
-// uniendo variables en una sola
-// let aprendiendo = 'Aprendiendo',
-//     tecnologia = 'JavaScript',
-//     numero = '300';
-
-let mensaje = 'Aprendiendo JavaScript, CSS, HTML, para ser Frontend';
-
-console.log(mensaje.indexOf('PHP'));
-console.log(mensaje.substring(3,21));
-console.log(mensaje.slice(-10));
-console.log(mensaje.split(' '));
-console.log(mensaje.split(','));
-console.log(mensaje.replace('CSS', 'PHP'));
-console.log(mensaje.includes('CSS'));
-console.log(mensaje.includes('PHP'));
+// for
+for(var a = 0; a < 10; a++){
+    console.log(a);
+}
 
 
-let tecnologia = "JavaScript" + ' ';
 
-console.log(tecnologia.repeat(10));
+console.log('GLOBALES: '+a,b,c);

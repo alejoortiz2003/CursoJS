@@ -1,28 +1,13 @@
-var a = 'a';
-let b = 'b';
-const c = 'c';
+async function leerTodos() {
+    // esperando respuesta
+    const respuesta = await fetch('https://jsonplaceholder.typicode.com/todos');
 
-// Scope de la funcion
-function funcionScope() {
-    var a = 'A';
-    let b = 'B';
-    const c = 'C';
-    console.log('FUNCION: '+a,b,c);
-}
-funcionScope();
-// Scope de bloque{}
-if(true) {
-    var a = 'AA';
-    let b = 'BB';
-    const c = 'CC';
-    console.log('BLOQUE: '+a,b,c);
+    // Procede cuando la respuesta este hecha
+
+    const datos = await respuesta.json();
+
+    return datos;
 }
 
-// for
-for(var a = 0; a < 10; a++){
-    console.log(a);
-}
-
-
-
-console.log('GLOBALES: '+a,b,c);
+leerTodos()
+    .then(usuarios => console.log(usuarios));
